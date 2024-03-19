@@ -19,7 +19,7 @@ console.log();
 console.log("3. WAP to find first 15 odd numbers");
 
 process.stdout.write("--> ")
-for(let i=0; i<=30; i++) {
+for(let i=1; i<=30; i++) {
     process.stdout.write(`${i++}  `);
 }
 console.log();
@@ -27,7 +27,7 @@ console.log();
 console.log("4. WAP to find first 10 even numbers");
 
 process.stdout.write("--> ")
-for(let i=1; i<=20; i++) {
+for(let i=2; i<=20; i++) {
     process.stdout.write(`${i++}  `);
 }
 console.log();
