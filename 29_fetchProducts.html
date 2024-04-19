@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 style="text-align: center;">Products</h2>
+
+    <table id="plist">
+      <tr>
+        <th style="padding: 5px;">ID</th>
+        <th style="padding: 5px;">TITLE</th>
+        <th style="padding: 5px;">PRICE</th>
+      </tr>
+    </table>
+
+    <script>
+      async function fetchData() {
+        const data = await fetch("https://fakestoreapi.com/products");
+        const products = await data.json();
+
+        const element = document.querySelector("#plist");
+
+        products.forEach((product) => {
+          const tr = document.createElement("tr");
+
+          const td1 = document.createElement("td");
+          const td2 = document.createElement("td");
+          const td3 = document.createElement("td");
+          td1.innerHTML = product.id;
+          td2.innerHTML = product.title;
+          td3.innerHTML = product.price;
+
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tr.appendChild(td3);
+          element.appendChild(tr);
+        });
+      }
+      fetchData();
+    </script>
+  </body>
+</html>
